@@ -1,0 +1,14 @@
+# One stateless web service. All personal data stays in browser IndexedDB.
+services:
+  - type: web
+    name: sidequest
+    runtime: node
+    plan: free
+    buildCommand: npm ci --include=dev && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: 24.19.0
+      - key: NODE_ENV
+        value: production
