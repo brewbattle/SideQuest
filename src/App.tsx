@@ -1031,7 +1031,9 @@ export default function App() {
                     <p>
                       {ready.length
                         ? `${ready.length} reviewed questions are ready for your upcoming exams.`
-                        : "Your syllabi haven’t arrived yet. Try the sandbox, then bring your next exam into play."}
+                        : state.materials.length
+                          ? "Your course materials are saved here. Review source-backed questions before using exam prep."
+                          : "Your syllabi haven’t arrived yet. Try the sandbox, then bring your next exam into play."}
                     </p>
                     <div className="bank-switch">
                       <button
