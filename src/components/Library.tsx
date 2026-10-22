@@ -98,7 +98,11 @@ export function QuestionEditor({
         parsed.course !== draft.course ||
         parsed.topic !== draft.topic ||
         parsed.id !== draft.id ||
-        JSON.stringify(parsed.source) !== JSON.stringify(input.source)
+        parsed.source.kind !== input.source.kind ||
+        parsed.source.label !== input.source.label ||
+        parsed.source.reference !== input.source.reference ||
+        parsed.source.materialId !== input.source.materialId ||
+        parsed.source.locator !== input.source.locator
       )
         throw Error(
           "Advanced settings must preserve the question ID, course, topic, and source.",
